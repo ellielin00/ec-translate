@@ -66,9 +66,25 @@ You can submit multiple items at once. The skill parses them intelligently:
 
 ## Usage
 
-### As a Claude Skill
+### For Claude Users
 
-Drop the `ec-translate/` folder into your skills directory, and Claude will automatically activate it when you provide e-commerce UI text for translation.
+Drop the `ec-translate/` folder into your Claude skills directory. Claude will automatically activate the skill when you provide e-commerce UI text for translation — just type your copy and get results.
+
+**File used:** `SKILL.md`
+
+### For Other AI Tools (GPT, Gemini, Coze, etc.)
+
+Copy the entire content of `ec-translate-prompt.md` and paste it into the **System Prompt** (or Custom Instructions / System Message) field of your AI tool. Then start a new conversation and type your e-commerce copy directly — the AI will follow the translation rules automatically.
+
+**File used:** `ec-translate-prompt.md`
+
+| Platform | Where to paste |
+|----------|---------------|
+| ChatGPT | Custom Instructions → System Message, or GPTs → Instructions |
+| Gemini | Google AI Studio → System Instructions |
+| Coze | Bot → Persona & Prompt |
+| Dify / FastGPT | App → System Prompt |
+| API calls | `system` field in the request body |
 
 ### Quick Examples
 
@@ -98,7 +114,9 @@ Checkout
 
 ```
 ec-translate/
-└── SKILL.md    # Skill definition with rules and examples
+├── SKILL.md                 # Claude skill definition (Claude only)
+├── ec-translate-prompt.md   # Universal system prompt (GPT, Gemini, Coze, etc.)
+└── README.md
 ```
 
 ## License
